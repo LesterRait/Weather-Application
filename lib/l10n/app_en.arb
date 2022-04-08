@@ -1,0 +1,12 @@
+{
+    "language": "English",
+    "description": "Description",
+    "weather": "Weather",
+    "selectCity": "Select a City",
+    "select": "Select",
+    "search": "Search",
+    "yourCity": "Your city",
+    "city": "City",
+    "weatherToday": "Weather Today",
+    "weekWeather": "7 daays Weather"
+} 

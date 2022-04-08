@@ -1,0 +1,12 @@
+{
+    "language": "Русский",
+    "description": "Описание",
+    "weather": "Погода",
+    "selectCity": "Выберите город",
+    "select": "Выбрать",
+    "search": "Поиск",
+    "yourCity": "Твой город",
+    "city": "Город",
+    "weatherToday": "Погода сегодня",
+    "weekWeather": "Погода на неделю"
+}
