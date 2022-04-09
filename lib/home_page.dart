@@ -4,8 +4,8 @@ import 'package:weather_app/model/weather.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:weather_app/widget/select_language.dart';
 import 'package:weather_app/widget/weather.dart';
-
 import 'services/api_client.dart';
+import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class HomePage extends StatefulWidget {
   final String welcome;
@@ -91,9 +91,9 @@ class _HomePageState extends State<HomePage> {
           title: Text(AppLocalizations.of(context)!.yourCity),
           content: TextField(
             controller: controller,
-            decoration: const InputDecoration(
-              labelText: 'City',
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              labelText: AppLocalizations.of(context)!.city,
+              border: const OutlineInputBorder(),
             ),
           ),
           actions: [
@@ -110,26 +110,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-// class SaveCityWidget extends StatefulWidget {
-//   final String favorite;
-//   const SaveCityWidget({Key? key, required this.favorite}) : super(key: key);
-
-//   @override
-//   State<SaveCityWidget> createState() => _SaveCityWidgetState();
-// }
-
-// class _SaveCityWidgetState extends State<SaveCityWidget> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return ListView.builder(
-//       // itemCount: widget.favorite.length,
-//       itemBuilder: (BuildContext context, int index) {
-//         return Text(
-//           widget.favorite[index],
-//         );
-//       },
-//     );
-//   }
-// }
