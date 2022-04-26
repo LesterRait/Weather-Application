@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/home_page.dart';
+import 'package:weather_app/screen/home.dart';
 import 'package:weather_app/model/weather.dart';
 import 'package:weather_app/widget/daily.dart';
 import 'package:weather_app/widget/hourly.dart';
@@ -12,7 +12,7 @@ class WeatherWidget extends StatelessWidget {
     required this.data,
   }) : super(key: key);
 
-  final HomePage widget;
+  final HomeScreen widget;
 
   final Weather? data;
 

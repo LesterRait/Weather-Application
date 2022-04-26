@@ -2,39 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:weather_app/model/weather.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
-import 'package:weather_app/widget/select_language.dart';
-import 'package:weather_app/widget/weather.dart';
-import 'services/api_client.dart';
-import 'package:flutter_gen/gen_l10n/app_localization.dart';
+import 'package:weather_app/widget/widget.dart';
+import '../services/api_client.dart';
 
-class HomePage extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   final String welcome;
   String city;
-  HomePage({
+  HomeScreen({
     Key? key,
     required this.welcome,
     required this.city,
   }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   WeatherApiClient client = WeatherApiClient();
   Weather? data;
   String city = 'Moscow';
-
-  Future<void> getData() async {
-    List<Location> locations =
-        await locationFromAddress(widget.city ?? widget.welcome);
-    print(locations);
-    data = await client.fetchHourlyWeather(
-      '${locations[0].latitude}',
-      '${locations[0].longitude}',
-      'en',
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,6 +94,18 @@ class _HomePageState extends State<HomePage> {
           ],
         );
       },
+    );
+  }
+
+  // Get location
+  Future<void> getData() async {
+    List<Location> locations =
+        await locationFromAddress(widget.city ?? widget.welcome);
+    print(locations);
+    data = await client.fetchHourlyWeather(
+      '${locations[0].latitude}',
+      '${locations[0].longitude}',
+      'en',
     );
   }
 }

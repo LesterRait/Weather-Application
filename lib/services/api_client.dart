@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:weather_app/Config/config.dart';
 import 'package:weather_app/model/weather.dart';
 
 class WeatherApiClient {
-  static const key = 'YOUR_API_KEY';
+  final key = Config().key;
 
   Future<Weather> fetchHourlyWeather(
     String? lat,
@@ -16,7 +17,6 @@ class WeatherApiClient {
 
     var response = await http.get(endpoint);
     var body = jsonDecode(response.body);
-    // print(Weather.fromJson(body));
     return Weather.fromJson(body);
   }
 }

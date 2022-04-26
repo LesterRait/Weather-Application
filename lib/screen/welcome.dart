@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/home_page.dart';
+import 'package:weather_app/screen/home.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -70,7 +70,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => HomePage(
+                              builder: (context) => HomeScreen(
                                 welcome: name,
                                 city: name,
                               ),
